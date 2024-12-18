@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "Passwortgeschützter Bereich"
+AuthUserFile /var/www/html/private/.htpasswd
+Require valid-user
+
+allow from 127.0.0.1

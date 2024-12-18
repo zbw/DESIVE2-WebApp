@@ -1,0 +1,280 @@
+{
+    "User": [
+        {
+            "pseudonym": "V4058",
+            "first_login": "2023-06-14 12:06:48",
+            "last_online": "2023-10-25 15:40:50",
+            "uploadCount": 5,
+            "surveyCount": 3,
+            "surveys": [
+                {
+                    "SurveyID": 1,
+                    "finished": "2023-08-23 18:31:29",
+                    "surveyAnswers": {
+                        "Wie häufig stoßen Sie auf Nachrichten oder Informationen zum Thema Gesundheit, von denen Sie glauben, dass sie die Realität falsch darstellen oder sogar unwahr sind? ": "seltener als einmal im Monat",
+                        "Wie sicher sind Sie, dass Sie in der Lage sind, Nachrichten oder Informationen zum Thema Gesundheit zu erkennen, die die Realität falsch darstellen oder sogar unwahr sind? ": "4",
+                        "Wie oft nutzen Sie Soziale Medien und Messenger-Dienste (z.B. WhatsApp, Telegram oder Signal)?": "seltener als einmal im Monat",
+                        "Welche Aussage beschreibt Ihre Nutzung von Messenger-Diensten am besten?": "Ich bin eher aktiv: Ich kommuniziere mit Freund:innen, Familie, Bekannten, bin in Gruppen eher aktiv, aber fange keine Diskussionen an.",
+                        "Welche Aussage beschreibt Ihre Nutzung von Sozialen Medien am besten?": "Ich bin eher aktiv: Ich lese Beiträge, schaue mir Videos und Bilder an, erstelle selbst Beiträge und like manchmal Beiträge anderer.",
+                        "Wie häufig sind Sie im Internet?*": "mehrmals die Woche",
+                        "Ich wohne …": "in einer Großstadt (ab 500.000 Einwohner).",
+                        "Welcher ist Ihr höchster Bildungsabschluss?": "Hochschule (z.B. Bachelor, Master, Diplom, Magister)",
+                        "Wie alt sind Sie?": "zwischen 40 und 49 Jahre",
+                        "Welchem Geschlecht fühlen Sie sich zugehörig?": "nicht-binär",
+                        "Über welche Themen haben Sie in den letzten Wochen falsche oder irreführende Informationen gesehen?": [
+                            "Andere Gesundheitsthemen"
+                        ],
+                        "Markieren Sie alle Aussagen, die auf Sie zutreffen.": [
+                            "Mir wurde schon Falschinformation zum Thema Gesundheit von Freund:innen und Bekannten geschickt.",
+                            "Ich hatte noch keinen Kontakt mit Falschinformation zum Thema Gesundheit."
+                        ],
+                        "Welche der folgenden Geräte nutzen Sie privat (oder beruflich)?": [
+                            "Smartphone"
+                        ],
+                        "Welche der folgenden Messenger-Dienste nutzen Sie?": [
+                            "Threema"
+                        ],
+                        "Welche der folgenden Sozialen Medien nutzen Sie?": [
+                            "Pinterest"
+                        ],
+                        "Welche Informationsquellen nutzen Sie, um sich über das aktuelle Tagesgeschehen zu informieren?": [
+                            "privates Radio / Fernsehen"
+                        ],
+                        "Was trifft auf Ihre derzeitige berufliche Situation zu?": [
+                            "Ich befinde mich in einer Ausbildung/Lehre."
+                        ],
+                        "Wie groß ist Ihr Interesse an folgenden Themen?": {
+                            "Politik": "4",
+                            "Wissenschaft und Forschung": "3",
+                            "Lokale Informationen aus meiner Umgebung": "5 - sehr großes Interesse",
+                            "Wirtschaft und Finanzen": "weiß nicht / keine Angabe",
+                            "Gesundheit": "4"
+                        }
+                    }
+                },
+                {
+                    "SurveyID": 2,
+                    "finished": "2023-08-23 18:32:35",
+                    "surveyAnswers": {
+                        "Wie sehr vertrauen Sie Wissenschaft und Forschung?": "4",
+                        "Wenn Sie an den letzten Monat zurückdenken, wie oft haben Sie sich über Gesundheitsthemen informiert?": "einmal im Monat",
+                        "Sind Sie besser oder schlechter über Gesundheitsthemen informiert als die meisten Menschen in Ihrem persönlichen Umfeld (z.B. Familie, Freundeskreis, Bekannte), was schätzen Sie?": "gleich gut informiert",
+                        "Wie häufig stoßen Sie auf Nachrichten oder Informationen zum Thema Gesundheit, von denen Sie glauben, dass sie die Realität falsch darstellen oder sogar unwahr sind?": "seltener als einmal im Monat",
+                        "Wie sicher sind Sie, dass Sie in der Lage sind, Nachrichten oder Informationen zum Thema Gesundheit zu erkennen, die die Realität falsch darstellen oder sogar unwahr sind?": "4",
+                        "Wo haben Sie sich im letzten Monat über Gesundheitsthemen informiert?": [
+                            "bei eigenen Recherchen, z.B. in Bibliotheken, bei Ämtern etc."
+                        ],
+                        "Wie eignen Sie sich Wissen über Gesundheitsthemen an?": [
+                            "Ich folge Gesundheitsthemen in Sozialen Medien."
+                        ],
+                        "Was macht eine Gesundheitsinformation aus Ihrer Sicht glaubwürdig? Eine Gesundheitsinformation ist glaubwürdig, wenn ...": [
+                            "meine Freund:innen / Familie sie für glaubwürdig halten."
+                        ],
+                        "Über welche Themen / Personen haben Sie in den letzten Wochen falsche oder irreführende Informationen gesehen?": [
+                            "Andere Gesundheitsthemen"
+                        ],
+                        "Und wenn Sie sich im Internet über Wissenschaft und Forschung informieren, wie oft tun Sie dies über folgende Wege?": {
+                            "Über Facebook, Twitter oder andere Soziale Medien": "häufig",
+                            "Über Blogs oder Online-Foren": "weiß nicht / keine Angabe",
+                            "Über Wikipedia": "sehr häufig",
+                            "Über Youtube oder ähnliche Videoplattformen": "gelegentlich",
+                            "Über Webauftritte von wissenschaftlichen Einrichtungen oder Organisationen": "häufig",
+                            "Über Websites oder Mediatheken von Nachrichtenmedien wie Zeitungen, Magazine oder Fernsehsender": "häufig",
+                            "Über Podcasts": "häufig"
+                        },
+                        "Wie oft...": {
+                            "sprechen Sie mit Freund:innen oder der Familie über Wissenschaft und Forschung?": "sehr häufig",
+                            "gehen Sie zu Veranstaltungen, Vorträgen oder Diskussionen über Wissenschaft und Forschung?": "häufig",
+                            "lesen Sie Artikel zu wissenschaftlichen Themen in gedruckten Zeitungen oder Magazinen?": "häufig",
+                            "sehen Sie sich Fernsehsendungen über Wissenschaft und Forschung im regulären Fernsehprogramm an?": "häufig",
+                            "kommt es vor, dass Sie im Radio Neuigkeiten oder Berichte über Wissenschaft und Forschung hören?": "häufig",
+                            "informieren Sie sich im Internet über Wissenschaft und Forschung?": "häufig"
+                        },
+                        "Hier ist eine Reihe von häufig gehörten Meinungen über die Wissenschaft. Geben Sie bitte an, ob Sie diesen Meinungen zustimmen oder nicht.": {
+                            "Wissenschaftler:innen ignorieren Ergebnisse, die ihren Ansichten widersprechen.": "3",
+                            "Wir sollten darauf vertrauen, dass Wissenschaftler:innen ihre Arbeit ehrlich machen.": "3",
+                            "Ich glaube, dass Wissenschaftler:innen Lösungen für unsere größten Probleme finden können.": "3",
+                            "Wissenschaftler:innen halten ihre Ergebnisse bewusst geheim.": "3"
+                        },
+                        "Wie groß ist Ihr Interesse an folgenden Gesundheitsthemen im Allgemeinen?": {
+                            "Krankheiten": "5 - sehr großes Interesse",
+                            "Therapiemöglichkeiten": "4",
+                            "Aktuelle, in den Nachrichten erwähnte Themen, die die Gesundheit betreffen (z.B. COVID-19, Affenpocken etc.)": "3",
+                            "Tipps und Ratschläge für eine gesunde Lebensweise": "3",
+                            "Sportliche Aktivitäten, die die Gesundheit betreffen": "4"
+                        },
+                        "Inwiefern stimmen Sie mit folgenden Aussagen überein?": {
+                            "Falschinformationen können die öffentliche Meinung manipulieren.": "4",
+                            "Falschinformationen stellen eine Gefahr für die Demokratie dar.": "weiß nicht / keine Angabe",
+                            "Falschinformationen sind keine Bedrohung.": "4",
+                            "Falschinformation können effektive Maßnahmen in der Gesundheitsversorgung der Bevölkerung verhindern oder blockieren.": "3",
+                            "Falschinformationen stellen eine Gefahr für die persönliche Gesundheit dar.": "4",
+                            "Die Meinungsfreiheit lässt auch die Verbreitung von Falschinformationen zu.": "4"
+                        }
+                    }
+                },
+                {
+                    "SurveyID": 3,
+                    "finished": "2023-08-23 18:33:13",
+                    "surveyAnswers": {
+                        "Wie sicher sind Sie, dass Sie in der Lage sind, Nachrichten oder Informationen zum Thema Gesundheit zu erkennen, die die Realität falsch darstellen oder sogar unwahr sind?": "4",
+                        "Wie häufig stoßen Sie auf Nachrichten oder Informationen zum Thema Gesundheit, von denen Sie glauben, dass sie die Realität falsch darstellen oder sogar unwahr sind?": "seltener als einmal im Monat",
+                        "Über welche Themen / Personen haben Sie in den letzten Wochen falsche oder irreführende Informationen gesehen?": [
+                            "Andere Gesundheitsthemen"
+                        ],
+                        "In welchem Maße treffen die folgenden Aussagen auf Sie zu?": {
+                            "Ich weiß, wie ich im Internet nützliche Gesundheitsinformationen finde.": "3",
+                            "Ich weiß, wie ich das Internet nutzen kann, um Antworten auf meine Fragen rund um das Thema Gesundheit zu bekommen.": "3",
+                            "Ich weiß, welche Quellen für Gesundheitsinformationen im Internet verfügbar sind.": "3",
+                            "Ich weiß, wo ich im Internet nützliche Gesundheitsinformationen finden kann.": "4",
+                            "Ich weiß, wie ich Gesundheitsinformationen aus dem Internet so nutzen kann, dass sie mir weiterhelfen.": "4",
+                            "Ich bin in der Lage, Gesundheitsinformationen, die ich im Internet finde, kritisch zu bewerten.": "4",
+                            "Ich kann im Internet zuverlässige von fragwürdigen Gesundheitsinformationen unterscheiden.": "4",
+                            "Wenn ich gesundheitsbezogene Entscheidungen auf Basis von Gesundheitsinformationen aus dem Internet treffe, fühle ich mich dabei sicher.": "4"
+                        },
+                        "Inwieweit treffen die folgenden Aussagen auf Sie zu?": {
+                            "Ich vermeide neue Informationen zu meiner Gesundheit.": "4",
+                            "Auch wenn es mich beunruhigt, möchte ich neue Informationen zu meiner Gesundheit bekommen.": "4",
+                            "Wenn es um Informationen zu Gesundheit geht, kann Unwissenheit auch ein Segen sein.": "3",
+                            "Ich kann mir Situationen vorstellen, in denen ich lieber nichts Neues über meine Gesundheit erfahren möchte.": "2",
+                            "Ich möchte neue Informationen zu meiner Gesundheit sofort bekommen.": "3",
+                            "Ich limitiere die Menge an Informationen, die ich über meine Gesundheit beziehe.": "4",
+                            "Ich fühle mich besser, wenn ich weniger neue Informationen zu meiner Gesundheit erfahre.": "5",
+                            "Mehr über meine Gesundheit zu wissen, hilft mir besser mit der aktuellen Situation umzugehen.": "4"
+                        },
+                        "Ich kann ...": {
+                            "fortgeschrittene Suchstrategien (z.B. Filterfunktion, Trunkierung) anwenden, um eine Suchanfrage im Internet einzugrenzen.": "3",
+                            "die Zuverlässigkeit von Informationen aus dem Internet anhand von Kriterien erklären (z.B. Aktualität, Schreibstil, Referenzen).": "3",
+                            "Suchstrategien im Internet an meinen persönlichen Bedarf anpassen (z.B. Auswahl von thematischen Suchmaschinen).": "3",
+                            "bei einer speziellen Aufgabe die angemessenste (Bedienungs-)Anleitung (z.B. Videotutorials, Hilfeseiten) für ein Computertool bestimmen.": "4",
+                            "Sicherheitseinstellungen meiner digitalen Geräte konfigurieren/ändern.": "4",
+                            "die richtige digitale Anwendung für mich und für andere zur Lösung eines Problems auswählen.": "5 - in hohem Maße",
+                            "unterscheiden, welche Computertools geeignet sind, um Inhalte gemeinsam zu erstellen und zu verwalten.": "3"
+                        }
+                    }
+                }
+            ],
+            "uploads": [
+                {
+                    "idDiaryEntry": 197,
+                    "idUpload": 224,
+                    "uploadType": "Photo",
+                    "uploadTimestamp": "2023-08-24 10:38:44",
+                    "filename": "Photo_V4058_197_2023-08-24 10_38_44.png",
+                    "additonalInfo": {
+                        "itemAdditionalText": [],
+                        "itemAdditionalVoiceMemo": [],
+                        "itemAdditionalQuestions": {
+                            "Was beschreibt die Situation, die Sie mit uns geteilt haben? Es geht bei dieser Frage darum, ob in der Situation die Information an Sie weitergegeben wurde oder ob Sie diese weitergegeben haben.": "Die Gesundheitsinformationen habe ich auf Social Media gesehen (z.B. Instagram, Facebook, Twitter).",
+                            "Wie schätzen Sie die Gesundheitsinformationen ein, die Ihre hochgeladene Information zeigt?": "Ich weiß es nicht.",
+                            "Wer hat die Gesundheitsinformationen, die Sie hochgeladen haben, mit Ihnen geteilt?": [
+                                "Jemand innerhalb einer Gruppe, in der mehrere Menschen, die ich kenne, zu einem Thema zusammenkommen (z.B. Kita-Gruppe, Sportgruppe, Mitarbeitergruppe)."
+                            ],
+                            "Was haben Sie mit den Gesundheitsinformationen, die Sie gerade hochgeladen haben, gemacht, nachdem Sie sie gesehen / erhalten haben?": [
+                                {
+                                    "Aus welchem Grund?": "Weiterer Grund xyz"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "idDiaryEntry": 198,
+                    "idUpload": 225,
+                    "uploadType": "Photo",
+                    "uploadTimestamp": "2023-08-24 10:39:27",
+                    "filename": "Photo_V4058_198_2023-08-24 10_39_27.png",
+                    "additonalInfo": {
+                        "itemAdditionalText": [],
+                        "itemAdditionalVoiceMemo": [],
+                        "itemAdditionalQuestions": {
+                            "Was beschreibt die Situation, die Sie mit uns geteilt haben? Es geht bei dieser Frage darum, ob in der Situation die Information an Sie weitergegeben wurde oder ob Sie diese weitergegeben haben.": "Die Gesundheitsinformationen habe ich auf Social Media gesehen (z.B. Instagram, Facebook, Twitter).",
+                            "Wie schätzen Sie die Gesundheitsinformationen ein, die Ihre hochgeladene Information zeigt?": "Ich weiß es nicht.",
+                            "Wer hat die Gesundheitsinformationen, die Sie hochgeladen haben, mit Ihnen geteilt?": [
+                                "Jemand innerhalb einer Gruppe, in der mehrere Menschen, die ich nicht kenne, zu einem Thema zusammenkommen (z.B. Bitcoin-Gruppe, Computerspielgruppe)."
+                            ],
+                            "Was haben Sie mit den Gesundheitsinformationen, die Sie gerade hochgeladen haben, gemacht, nachdem Sie sie gesehen / erhalten haben?": [
+                                {
+                                    "Wo und aus welchem Grund?": "Anderer Grund, weil xyz"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "idDiaryEntry": 201,
+                    "idUpload": 228,
+                    "uploadType": "Photo",
+                    "uploadTimestamp": "2023-09-18 14:52:53",
+                    "filename": "Photo_V4058_201_2023-09-18 14_52_53.png",
+                    "additonalInfo": {
+                        "itemAdditionalText": [],
+                        "itemAdditionalVoiceMemo": [],
+                        "itemAdditionalQuestions": {
+                            "Was beschreibt die Situation, die Sie mit uns geteilt haben? Es geht bei dieser Frage darum, ob in der Situation die Information an Sie weitergegeben wurde oder ob Sie diese weitergegeben haben.": "Die Gesundheitsinformationen wurden mit mir per Messenger (z.B. Whatsapp, Facebook Messenger, Signal, SMS) geteilt.",
+                            "Wie schätzen Sie die Gesundheitsinformationen ein, die Ihre hochgeladene Information zeigt?": "Ich weiß es nicht.",
+                            "Wer hat die Gesundheitsinformationen, die Sie hochgeladen haben, mit Ihnen geteilt?": [
+                                "Ein Nachrichtendienst, den ich zu einem bestimmten Thema abonniert habe."
+                            ],
+                            "Was haben Sie mit den Gesundheitsinformationen, die Sie gerade hochgeladen haben, gemacht, nachdem Sie sie gesehen / erhalten haben?": [
+                                {
+                                    "Wo und aus welchem Grund?": "weitere Text auf Webseite xyz.com/abc"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "idDiaryEntry": 202,
+                    "idUpload": 229,
+                    "uploadType": "Photo",
+                    "uploadTimestamp": "2023-09-18 14:54:05",
+                    "filename": "Photo_V4058_202_2023-09-18 14_54_05.png",
+                    "additonalInfo": {
+                        "itemAdditionalText": {
+                            "Fällt Ihnen noch etwas zu Ihren geteilten Gesundheitsinformationen ein? Möchten Sie noch etwas hinzufügen?": "weitere Infos auf Webseite xyz.com/abc"
+                        },
+                        "itemAdditionalVoiceMemo": [],
+                        "itemAdditionalQuestions": {
+                            "Was beschreibt die Situation, die Sie mit uns geteilt haben? Es geht bei dieser Frage darum, ob in der Situation die Information an Sie weitergegeben wurde oder ob Sie diese weitergegeben haben.": "Ich habe die Gesundheitsinformationen auf anderem Weg erhalten.",
+                            "Wie schätzen Sie die Gesundheitsinformationen ein, die Ihre hochgeladene Information zeigt?": "Ich weiß es nicht.",
+                            "Wer hat die Gesundheitsinformationen, die Sie hochgeladen haben, mit Ihnen geteilt?": [
+                                "Jemand innerhalb einer Gruppe, in der mehrere Menschen, die ich kenne, zu einem Thema zusammenkommen (z.B. Kita-Gruppe, Sportgruppe, Mitarbeitergruppe)."
+                            ],
+                            "Was haben Sie mit den Gesundheitsinformationen, die Sie gerade hochgeladen haben, gemacht, nachdem Sie sie gesehen / erhalten haben?": [
+                                {
+                                    "Wo und aus welchem Grund?": "XYZ Lorem ipsum"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "idDiaryEntry": 203,
+                    "idUpload": 230,
+                    "uploadType": "Photo",
+                    "uploadTimestamp": "2023-09-18 14:55:02",
+                    "filename": "Photo_V4058_203_2023-09-18 14_55_02.png",
+                    "additonalInfo": {
+                        "itemAdditionalText": {
+                            "Fällt Ihnen noch etwas zu Ihren geteilten Gesundheitsinformationen ein? Möchten Sie noch etwas hinzufügen?": "test gfhvb https://learn.microsoft.com/de-de/windows/wsl/install?djdjdhaggshddj=udjsjsjsjakskdj737352718272627182826278182627191918373773727164638392"
+                        },
+                        "itemAdditionalVoiceMemo": [],
+                        "itemAdditionalQuestions": {
+                            "Was beschreibt die Situation, die Sie mit uns geteilt haben? Es geht bei dieser Frage darum, ob in der Situation die Information an Sie weitergegeben wurde oder ob Sie diese weitergegeben haben.": "Die Gesundheitsinformationen habe ich auf Social Media gesehen (z.B. Instagram, Facebook, Twitter).",
+                            "Wie schätzen Sie die Gesundheitsinformationen ein, die Ihre hochgeladene Information zeigt?": "Ich weiß es nicht.",
+                            "Wer hat die Gesundheitsinformationen, die Sie hochgeladen haben, mit Ihnen geteilt?": [
+                                "Jemand innerhalb einer Gruppe, in der mehrere Menschen, die ich kenne, zu einem Thema zusammenkommen (z.B. Kita-Gruppe, Sportgruppe, Mitarbeitergruppe)."
+                            ],
+                            "Was haben Sie mit den Gesundheitsinformationen, die Sie gerade hochgeladen haben, gemacht, nachdem Sie sie gesehen / erhalten haben?": [
+                                {
+                                    "Wo und aus welchem Grund?": "gff"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Masterliste</title>
+
+</head>
+
+<body>
+    <div style="border: 1px solid black; margin: 10px">
+        <form action="" method="post" style="margin: 10px;">
+            <h1>Masterliste herunterladen:</h1>
+            <button id="masterlist-download" type="submit" name="action" value="downloadMasterlist" />Masterliste
+            herunterladen</button>
+            <button id="masterlist-print" type="submit" name="action" value="printMasterlist" />Masterliste
+            anzeigen</button>
+        </form>
+    </div>
+
+    <div style="border: 1px solid black; margin: 10px">
+        <form action="" method="post" style="margin: 10px;">
+            <h1>Teilnahmeinteresse anpassen:</h1>
+            Mit der folgenden Funktion kann für einen bestehenden Eintrag das Teilnahmeinteresse geändert werden.
+            <br>
+            Da derzeit nur "Upgrades" vorgesehen sind (also bei einem existierenden Eintrag die jeweils mit "0" gefüllte
+            Spalte mit "1" ersetzt wird), reicht die Angabe des Pseudonyms aus (Suche in Masterliste oben).
+            <br>
+            <br>
+            Falls die App-Nutzung neu hinzugefügt wird, wird eine Mail mit den Zugangsdaten verschickt (sofern diese
+            Funktion im System aktiv ist).
+            <br>
+            Falls die Interview-Teilnahme neu ist, wird eine Informationsmail an das IBI versandt.
+
+            <p>Pseudonym: <input type="text" name="SubjectIdentifier" pattern="[A-Z][0-9]{4}" required /></p>
+            <button id="masterlist-submit" type="submit" name="action" value="changeParticipationInterest" />Änderung
+            ausführen</button>
+        </form>
+    </div>
+
+    <div style="border: 2px solid gold; margin: 10px">
+
+        <div style="border: 1px solid black; margin: 10px">
+            <form action="resources/incentive-details-participant.php" method="post" style="margin: 10px;">
+                <h1>Incentive eintragen:</h1>
+                Über die folgenden Felder können Incentives für einzelne Personen verbucht werden.
+                <br>
+                <p>Pseudonym: <input type="text" id="SubjectIdentifier" name="SubjectIdentifier" pattern="[A-Z][0-9]{4}"
+                        required /></p>
+                <button id="showParticipantIncentive" type="submit" name="action"
+                    value="showParticipantIncentive" />Incentive-Details für Pseudonym aufrufen</button>
+            </form>
+        </div>
+
+        <div style="border: 1px solid black; margin: 10px">
+            <form action="resources/incentive-create-paymentlist.php" method="post" style="margin: 10px;">
+                <h1>Auszahlungsliste generieren:</h1>
+                Generiert eine Liste von fälligen Überweisungen und setzt den Zahlungsstatus auf "in Bearbeitung".
+                Dadurch werden die betroffenen Zahlungen nicht mehr in der nächsten Auszahlungsliste aufgeführt.
+                <br>
+                Über die Funktion "Vorschau anzeigen" kann eine Vorschau der Liste angezeigt werden.
+                <br>
+                <br>
+                <button id="preview-paymentlist" type="submit" name="action" value="create-paymentlist" />Vorschau
+                anzeigen</button>
+            </form>
+        </div>
+
+        <div style="border: 1px solid black; margin: 10px">
+            <form action="resources/incentive-show-paymentlist.php" method="post" style="margin: 10px;">
+                <h1>Auszahlungslisten anzeigen:</h1>
+                Zeigt die erzeugten Auszahlungslisten an.
+                <br>
+                <br>
+                <button id="view-paymentlists" type="submit" name="action" value="view-paymentlists" />Bestehende Listen
+                anzeigen</button>
+            </form>
+        </div>
+
+        <div style="border: 1px solid black; margin: 10px">
+            <form action="resources/incentive-paid-paymentlist.php" method="post" style="margin: 10px;">
+                <h1>Auszahlungsliste als überwiesen kennzeichnen:</h1>
+                Wenn alle Zahlungen der Liste überwiesen wurden, kann diese Liste als "überwiesen" markiert werden.
+                Dadurch werden die betroffenen Zahlungen als abgeschlossen verbucht und die betroffenen Personen
+                erhalten eine Informationsmail.
+                <br>
+                <br>
+                Dazu muss die ID der bearbeiteten Auszahlungsliste angegeben werden.
+                Im nächsten Schritt kann dann pro Zahlung angegeben werden, ob diese erfolgreich überwiesen wurde.
+                <br>
+                <p>Nummer der Auszahlungsliste: <input type="number" id="paymentListID" name="paymentListID" /></p>
+                <button id="paid-paymentlist" type="submit" name="action" value="paid-paymentlist" />Zahlungsliste als
+                gebucht speichern</button>
+            </form>
+        </div>
+
+        <div style="border: 1px solid black; margin: 10px">
+            <form action="resources/incentive-overview.php" method="post" style="margin: 10px;">
+                <h1>Incentive Übersicht:</h1>
+                Mit der folgenden Funktion kann eine Übersicht über alle Incentives erstellt werden.
+                <br>
+                <br>
+                <button id="show-incentives" type="submit" name="action" value="show-incentives" />Alle Incentives
+                anzeigen</button>
+            </form>
+        </div>
+    </div>
+
+    <div style="border: 1px solid black; margin: 10px">
+        <form action="resources/export.php" method="post" style="margin: 10px" target="_blank">
+            <h1>App-Daten exportieren</h1>
+            Mit einem Klick auf den folgenden Button wird ein .zip-Archiv der Daten erstellt.
+            <br>
+            Darin enthalten ist eine JSON-Datei, die die Daten strukturiert enthält, sowie die hochgeladenen Bilder,
+            PDFs und Audiodateien.
+            <br>
+            <b>Achtung:</b> Es werden nur Nutzer aufgeführt, die auch an der App-Studie teilnehmen und daher einen
+            Account haben. Reine Interview-Teilnahmen sind nicht Teil dieses Exports und können derzeit über die
+            Masterliste eingesehen werden! Außerdem sind in der JSON-Datei keine über die Masterliste einsehbaren
+            personenbezogenen Daten enthalten (Name, E-Mail-Adresse, IBAN).
+            <b>Achtung:</b> Es werden nur Nutzer aufgeführt, die auch an der App-Studie teilnehmen und daher einen
+            Account haben. Reine Interview-Teilnahmen sind nicht Teil dieses Exports und können derzeit über die
+            Masterliste eingesehen werden! Außerdem sind in der JSON-Datei keine über die Masterliste einsehbaren
+            personenbezogenen Daten enthalten (Name, E-Mail-Adresse, IBAN).
+            <br>
+            <br>
+            <label for="exportStartDate"><b>Frühester</b> Erstellungszeitpunkt des App-Accounts:</label>
+            <input type="date" id="exportStartDate" name="exportStartDate" required>
+            <script>
+                document.getElementById("exportStartDate").value = "2022-01-01";
+            </script>
+            &larr; Registrierung für 2. Runde ab dem 01.06.2023
+            <br>
+            <br>
+            <label for="exportEndDate"><b>Spätester</b> Erstellungszeitpunkt des App-Accounts:</label>
+            <input type="date" id="exportEndDate" name="exportEndDate" required value="">
+            <script>
+                var today = new Date();
+                var tomorrow = new Date(today);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                document.getElementById("exportEndDate").value = tomorrow.toISOString().slice(0, 10);
+            </script>
+            &larr; Exklusive Enddatum (also bis 00:00:00 Uhr des angegebenen Tages)
+            <br>
+            <br>
+            <button id="exportAppData" type="submit" name="action" value="exportAppData">Export starten</button>
+        </form>
+    </div>
+
+    <div style="border: 1px solid black; margin: 10px">
+        <div style="margin: 10px">
+            <h1>App-Accounts für Wartelisten User anlegen</h1>
+            Mit einem Klick auf den folgenden Button werden für alle User, die sich auf der Warteliste befinden,
+            App-Accounts angelegt sowie die Passwort-Mails verschickt.
+            <br>
+            <br>
+            <button onclick="window.open('resources/createAccounts.php', '_blank'); return false;">
+                Accounts anlegen
+        </div>
+    </div>
+
+</body>
+
+</html>

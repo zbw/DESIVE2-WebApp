@@ -1,0 +1,80 @@
+<br>
+<br>
+Legende:
+<!-- create table with 2 columns-->
+<table>
+<tr>
+    <td>Pseudonym</td>
+    <td>Ein Pseudonym, das den Nutzer identifiziert, aber nicht persönlich identifizierbar ist. Es wird für die Zuordnung von Daten aus der App und dem Interview verwendet.</td>
+</tr>
+<tr>
+    <td>Name</td>
+    <td>Der Vor- und Nachname des Nutzers.</td>
+</tr>
+<tr>
+    <td>E-Mail-Adresse</td>
+    <td>Die E-Mail-Adresse des Nutzers.</td>
+</tr>
+<tr>
+    <td>App-Teilnahme</td>
+    <td>Ob der Nutzer an der App-Studie teilnehmen will.</td>
+</tr>
+<tr>
+    <td>Interview-Teilnahme</td>
+    <td>Ob der Nutzer am Interview teilnehmen will.</td>
+</tr>
+<tr>
+    <td>IBAN</td>
+    <td>Die IBAN des Nutzers, falls hinterlegt (ansonsten leer).</td>
+</tr>
+<tr>
+    <td>Registrierungszeitpunkt</td>
+    <td>Der Zeitpunkt, zu dem der Nutzer sich auf der Webseite registriert hat. (Alle Registrierungen mit Timestamp vom 04.01.2023 sind bis zu diesem Zeitpunkt gesammelt worden und haben mangels Erfassung keine korrekte Zeitangabe. Spätere Registrierungen haben korrekte Zeitangaben.)</td>
+</tr>
+<tr>
+    <td>Erster Login</td>
+    <td>Zeitpunkt, zu dem der Nutzer sich das erste Mal mit den Zugangsdaten in der App angemeldet hat.</td>
+</tr>
+<tr>
+    <td>Letzte Aktivität</td>
+    <td>Zeitpunkt, zu dem die App das letzte Mal aktiv war (Push-Benachrichtungen zählen nicht).</td>
+</tr>
+<tr>
+    <td>Passwort durch User gesetzt</td>
+    <td>1, wenn Nutzer das Account-Passwort geändert hat, ansonsten 0.</td>
+</tr>
+<tr>
+    <td>Push-Nachrichten aktiv</td>
+    <td>1, wenn Push-Nachrichten für das aktuell hinterlegte Gerät aktiv sind, ansonsten 0.</td>
+</tr>
+<tr>
+    <td>Anzahl Tagebuch-Einträge</td>
+    <td>Anzahl der Tagebuch-Einträge, die der Nutzer in der App angelegt hat. (Nicht zu verwechseln mit der Gesamtzahl der hochgeladenen Dateien, da bspw. zu einem Bild eine Sprachnachricht aufgenommen werden kann. Dieser Fall generiert nur einen Tagebucheintrag, aber 2 Dateien.)</td>
+</tr>
+<tr>
+    <td>Anzahl beantworteter Umfragen</td>
+    <td>Gesamtanzahl der beantworteten Umfragen.</td>
+</tr>
+<tr>
+    <td>Erstellungszeitpunkt App-Account</td>
+    <td>Zeitpunkt, zu dem der App-Account erstellt wurde. Auf Basis dieses Timestamps werden die Erinnerungsmails bei Nicht-Nutzung generiert. ("Sie haben bereits ein Passwort für die DESIVE²-App erhalten, sich jedoch nicht eingeloggt. Haben Sie vielleicht Schwierigkeiten beim Login? Wir helfen Ihnen gern!")</td>
+</tr>
+<tr>
+    <td>idAppUser</td>
+    <td>Datenbank-interne ID für den App-Account.</td>
+</tr>
+<tr>
+    <td>creation_timestamp setzen (now())</td>
+    <td>Setzt den creation_timestamp auf den aktuellen Zeitpunkt.</td>
+</tr>
+<tr>
+    <td>Passwort zurücksetzen</td>
+    <td>Setzt das Passwort des Accounts auf ein neues, zufällig generiertes zurück und sendet es an den Nutzer. Laufende App-Sessions werden invalidiert und der Nutzer entsprechend ausgeloggt.</td>
+</tr>
+<tr>
+    <td>App-Account zurücksetzen</td>
+    <td>Löscht gesammelte App-Daten aus dem Account (Surveys, Tagebucheinträge, Notifications) und setzt enc_token=0, first_login=NULL, last_online=NULL, registration_id=NULL und receivesPush=0.</td>
+</table>
+
+</body>
+</html>

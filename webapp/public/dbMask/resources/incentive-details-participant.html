@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Incentive-Details</title>
+    <script>
+        function isValidIBAN(iban) {
+            // Entferne Leerzeichen aus der IBAN
+            iban = iban.replace(/\s/g, '');
+
+            // Überprüfe, ob die IBAN aus Großbuchstaben und Zahlen besteht
+            if (!/^[0-9A-Z]+$/.test(iban)) {
+                return false;
+            }
+
+            // Prüfe die Länge der IBAN für das entsprechende Länderkennzeichen
+            var countryCode = iban.slice(0, 2);
+            var ibanLengths = {
+                'AL': 28, 'AD': 24, 'AT': 20, 'AZ': 28, 'BH': 22, 'BE': 16, 'BA': 20, 'BR': 29,
+                'BG': 22, 'CR': 21, 'HR': 21, 'CY': 28, 'CZ': 24, 'DK': 18, 'DO': 28, 'EE': 20,
+                'FO': 18, 'FI': 18, 'FR': 27, 'GE': 22, 'DE': 22, 'GI': 23, 'GR': 27, 'GL': 18,
+                'GT': 28, 'HU': 28, 'IS': 26, 'IE': 22, 'IL': 23, 'IT': 27, 'JO': 30, 'KZ': 20,
+                'XK': 20, 'KW': 30, 'LV': 21, 'LB': 28, 'LI': 21, 'LT': 20, 'LU': 20, 'MT': 31,
+                'MR': 27, 'MU': 30, 'MC': 27, 'MD': 24, 'ME': 22, 'NL': 18, 'MK': 19, 'NO': 15,
+                'PK': 24, 'PS': 29, 'PL': 28, 'PT': 25, 'QA': 29, 'RO': 24, 'LC': 32, 'SM': 27,
+                'ST': 25, 'SA': 24, 'RS': 22, 'SC': 31, 'SK': 24, 'SI': 19, 'ES': 24, 'SE': 24,
+                'CH': 21, 'TL': 23, 'TN': 24, 'TR': 26, 'UA': 29, 'AE': 23, 'GB': 22, 'VG': 24
+            };
+
+            if (iban.length !== ibanLengths[countryCode]) {
+                return false;
+            }
+
+            // Verschiebe die ersten 4 Zeichen ans Ende der IBAN
+            var rearrangedIBAN = iban.slice(4) + iban.slice(0, 4);
+
+            // Ersetze Buchstaben durch Zahlen (A=10, B=11, usw.)
+            var numericIBAN = '';
+            for (var i = 0; i < rearrangedIBAN.length; i++) {
+                var charCode = rearrangedIBAN.charCodeAt(i);
+                if (charCode >= 65 && charCode <= 90) {
+                    numericIBAN += (charCode - 55).toString();
+                } else {
+                    numericIBAN += rearrangedIBAN.charAt(i);
+                }
+            }
+
+            // Führe die IBAN-Modulo-97-Berechnung durch
+            var remainder = 0;
+            for (var j = 0; j < numericIBAN.length; j++) {
+                remainder = (parseInt(remainder + numericIBAN.charAt(j)) % 97);
+            }
+
+            return (remainder === 1);
+        }
+
+        function checkIBAN() {
+            var ibanInput = document.getElementById("iban");
+            var iban = ibanInput.value;
+
+            if (isValidIBAN(iban)) {
+                alert("Die IBAN scheint gültig!");
+            } else {
+                alert("Die IBAN scheint ungültig! Bitte beachten: Dieser Check überprüft nur grundlegende Validierungsregeln.");
+            }
+        }
+
+        function confirmOverwriteIBAN() {
+            if (document.getElementById("saveIBAN").checked) {
+                var confirmation = confirm("Achtung: Überschreibt die bestehende IBAN (sofern vorhanden), die über die App hochgeladen wurde! Möchten Sie fortfahren?");
+                if (!confirmation) {
+                    document.getElementById("saveIBAN").checked = false;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Add small infotext in grey that Javascript is needed on this page -->
+    <p style="color:grey">Javascript muss aktiviert sein, um die Funktionen dieser Seite zu nutzen.</p>
+
+    <button onclick="location.href='../index.php'" type="button">
+        Zurück zur Haupt-Verwaltungsseite
+    </button>
+
+    <br>
+    <br>
+
+    <h3>Neue Incentive-Buchung anlegen</h3>
+    <form action="incentive-details-participant.php" method="post" style="margin-top: 10px;">
+        <!-- Create table with 3 columns for description, value, checkbox -->
+        <table>
+            <tr>
+                <th>Eigenschaft</th>
+                <th>Wert</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Pseudonym</td>
+                <td><input type="text" id="subjectIdentifier" name="subjectIdentifier" value="{{pseudonym}}" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name" name="name" value="{{name}}" required /></td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td><input type="text" id="email" name="email" value="{{email}}" required /></td>
+            </tr>
+            <tr>
+                <td>IBAN</td>
+                <td><input type="text" id="iban" name="iban" value="{{iban}}" /></td>
+                <td><button type="button" onclick="checkIBAN()">IBAN Prüfen</button></td>
+            </tr>
+            <tr>
+                <td>IBAN im Benutzer-<br>konto überschreiben</td>
+                <td>
+                    <input type="checkbox" id="saveIBAN" name="saveIBAN"
+                        onclick="confirmOverwriteIBAN()" />
+                </td>
+                <td><span style="color:red;">Achtung: Überschreibt die bestehende IBAN (sofern vorhanden), die über die
+                        App hochgeladen wurde!</span></td>
+            </tr>
+        </table>
+        Achtung: Änderungen an dieser Stelle beeinflussen nur die für die nächste Auszahlung gespeicherten Daten. Es
+        erfolgt keine Änderung des Benutzerkontos etc.
+
+        <table style="margin-top: 20px">
+            <tr>
+                <th>Bereich</th>
+                <th>Betrag</th>
+                <th>Zusatzinfo</th>
+                <th>Bisher gebucht</th>
+            </tr>
+            <tr>
+                <td>Interview</td>
+                <td>
+                    <input type="number" step="0.01" id="interview_incentive" name="interview_incentive" value="0.00"
+                        max="30.00" />
+                    €
+                </td>
+                <td>
+                    <input type="text" id="interview_info" name="interview_info" />
+                </td>
+                <td align="center">{{incentivePaidInterview}} €</td>
+            </tr>
+            <tr>
+                <td>Umfrage (aktuell: {{numberOfSurveys}})</td>
+                <td>
+                    <input type="number" step="0.01" id="survey_incentive" name="survey_incentive" value="0.00"
+                        max="15.00" />
+                    €
+                </td>
+                <td>
+                    <input type="text" id="survey_info" name="survey_info" />
+                </td>
+                <td align="center">{{incentivePaidSurvey}} €</td>
+            </tr>
+            <tr>
+                <td>Uploads (aktuell: {{numberOfUploads}})</td>
+                <td>
+                    <input type="number" step="0.01" id="upload_incentive" name="upload_incentive" value="0.00"
+                        max="55.00" />
+                    €
+                </td>
+                <td>
+                    <input type="text" id="upload_info" name="upload_info" />
+                </td>
+                <td align="center">{{incentivePaidUploads}} €</td>
+            </tr>
+            <tr>
+                <td>Experimente</td>
+                <td>
+                    <input type="number" step="0.01" id="experiment_incentive" name="experiment_incentive"
+                        value="0.00" />
+                    €
+                </td>
+                <td>
+                    <input type="text" id="experiment_info" name="experiment_info" />
+                </td>
+                <td align="center">{{incentivePaidExperiments}} €</td>
+            </tr>
+            <tr>
+                <td>Bonus</td>
+                <td>
+                    <input type="number" step="0.01" id="bonus_incentive" name="bonus_incentive" value="0.00" />
+                    €
+                </td>
+                <td>
+                    <input type="text" id="bonus_info" name="bonus_info" />
+                </td>
+                <td align="center">{{incentivePaidBonus}} €</td>
+            </tr>
+            <tr align="center">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{incentivePaidTotal}} €</td>
+            </tr>
+        </table>
+
+        <br>
+
+
+        <button id="bookNewIncentive" type="submit" name="action" value="bookNewIncentive">
+            Neue Auszahlung anlegen
+        </button>
+    </form>
+
+    <br>
+    <!-- Create table with all incentives for this user -->
+
+    <h3>Bestehende Buchungen/Auszahlungen</h3>
+
+</body>
+
+</html>

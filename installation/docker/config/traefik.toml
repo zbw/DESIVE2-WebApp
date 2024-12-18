@@ -1,0 +1,35 @@
+[log]
+  level = "warning"
+
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+    [entryPoints.web.http.redirections]
+      [entryPoints.web.http.redirections.entryPoint]
+        to = "web-secure"
+        scheme = "https"
+  [entryPoints.web-secure]
+    address = ":443"
+    [entryPoints.name.transport]
+        [entryPoints.name.transport.respondingTimeouts]
+          readTimeout = 3600
+          writeTimeout = 3600
+
+[providers]
+  [providers.docker]
+    endpoint = "unix:///var/run/docker.sock"
+    exposedByDefault = false
+  [providers.file]
+    directory = "/etc/traefik/dynamic-conf"
+    watch = true
+
+[certificatesResolvers]
+  [certificatesResolvers.httpchallenge]
+    [certificatesResolvers.httpchallenge.acme]
+      email = "MAILBOX@DOMAIN.TLD"
+      storage = "/etc/traefik/acme/acme.json"
+      [certificatesResolvers.httpchallenge.acme.httpChallenge]
+        entryPoint = "web"
+
+[api]
+  dashboard = true

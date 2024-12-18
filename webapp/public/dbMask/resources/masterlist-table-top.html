@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Masterliste</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="location.href='index.php'" type="button">
+        Zurück zur Haupt-Verwaltungsseite
+    </button>
+
+    <form action="" method="post" style="margin-top: 10px;">
+    <button id="masterlist-print" type="submit" name="action" value="printMasterlist">
+        Liste neu laden
+    </button>
+    </form>
+
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <!-- print in bold -->
+                <th>Pseudonym</th>
+                <th>Name</th>
+                <th>E-Mail-Adresse</th>
+                <th>App-Teilnahme</th>
+                <th>Interview-Teilnahme</th>
+                <th>IBAN</th>
+                <th>Registrierungszeitpunkt</th>
+            </tr>
+        </thead>
+        <tbody>

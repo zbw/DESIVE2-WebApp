@@ -1,0 +1,110 @@
+services:
+
+  api:
+    build: .
+    restart: unless-stopped
+    # Document_root is /var/www/html/public (see Dockerfile)
+    volumes:
+      - ./app/:/var/www/html/
+    environment:
+      - TZ=Europe/Berlin
+    networks:
+      - web-proxy
+      - default
+    links:
+      - db
+    depends_on:
+      - db
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web-proxy"
+      - "traefik.http.routers.api-testing.entryPoints=web-secure"
+      - "traefik.http.routers.api-testing.rule=Host(`SUBDOMAIN.DOMAIN.TLD`)" # Change to your domain
+      - "traefik.http.routers.api-testing.tls.options=intermediate@file"
+      - "traefik.http.routers.api-testing.tls.certresolver=httpchallenge"
+      - "com.centurylinklabs.watchtower.enable=false" # Exclude from watchtower updates --> needs to be build
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=0
+      - PMA_HOST=db
+      - UPLOAD_LIMIT=300M
+      - TZ=Europe/Berlin
+    restart: unless-stopped
+    depends_on:
+      - db
+    networks:
+      - web-proxy
+      - default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web-proxy"
+      - "traefik.http.routers.api-testingpma.rule=Host(`pma_SUBDOMAIN.DOMAIN.TLD`)" # Change to your domain
+      - "traefik.http.routers.api-testingpma.middlewares=sec@file, gzip@file"
+      - "traefik.http.routers.api-testingpma.tls.options=intermediate@file"
+      - "traefik.http.routers.api-testingpma.tls.certresolver=httpchallenge"
+
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=${DBNAME}
+      - MYSQL_USER=${DBUSER}
+      - MYSQL_PASSWORD=${DBUSERPASS}
+      - MYSQL_ROOT_PASSWORD=${DBROOTPASS}
+      - TZ=Europe/Berlin
+      - MARIADB_AUTO_UPGRADE="1"
+    volumes:
+      - ./db:/var/lib/mysql
+
+  db-backup:
+    image: fradelg/mysql-cron-backup:latest
+    restart: unless-stopped
+    volumes:
+      - ./db-backup:/backup
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=${DBUSER}
+      - MYSQL_PASS=${DBUSERPASS}
+      - MYSQL_DB=${DBNAME}
+      - MAX_BACKUPS=60
+      - INIT_BACKUP=0
+      - CRON_TIME=0 1 * * *
+      - TZ=Europe/Berlin
+    depends_on:
+      - db
+
+  traefik:
+    image: traefik:v2.11
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - web-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config:/etc/traefik
+    environment:
+      - TZ=Europe/Berlin
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web-proxy"
+      - "traefik.http.routers.traefik.rule=Host(`${API_URL}`)"
+      - "traefik.http.routers.traefik.middlewares=${MIDDLEWARES}"
+      - "traefik.http.routers.traefik.tls.certresolver=httpchallenge"
+      - "traefik.http.routers.traefik.tls.options=intermediate@file"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.middlewares.traefikauth.basicauth.users=${BASIC_AUTH_USERS}"  
+
+volumes:
+  db:
+  db-backup:
+  app:
+
+networks:
+  web-proxy:
+    external:
+      name: web-proxy

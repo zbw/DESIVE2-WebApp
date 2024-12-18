@@ -1,0 +1,36 @@
+[http]
+  [http.services]
+    [http.services.dummy]
+      [http.services.dummy.loadBalancer]
+        [[http.services.dummy.loadBalancer.servers]]
+          url = ""
+  [http.routers]
+    [http.routers.http]
+      entryPoints = ["web"]
+      middlewares = ["https"]
+      rule = "HostRegexp(`{host:.+}`)"
+      service = "dummy"
+  [http.middlewares]
+    [http.middlewares.https.redirectScheme]
+      scheme = "https"
+      permanent = true
+    [http.middlewares.sec.headers]
+      stsSeconds = 31536000
+      browserXssFilter = true
+      customFrameOptionsValue = "SAMEORIGIN"
+      referrerPolicy = "no-referrer-when-downgrade"
+      contentTypeNosniff = true
+    [http.middlewares.gzip.compress]
+[tls]
+  [tls.options]
+    [tls.options.intermediate]
+      minVersion = "VersionTLS12"
+      cipherSuites = [
+        "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305",
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
+      ]
+      sniStrict = true
